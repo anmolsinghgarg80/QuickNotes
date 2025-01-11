@@ -103,16 +103,7 @@ Ensure you have the following installed:
 
 The application should now be running, with the frontend accessible at `http://localhost:3000` and the backend at `http://localhost:5000`.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
 ## License
 
 This project is licensed under the MIT License.
 
----
-
-*Note: Replace placeholder values in the `.env` files with your actual configuration details.*
-
-For more detailed information, visit the [QuickNotes GitHub repository](https://github.com/anmolsinghgarg80/QuickNotes).
