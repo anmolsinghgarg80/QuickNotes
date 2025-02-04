@@ -73,16 +73,8 @@ Ensure you have the following installed:
    Create a `.env` file in the `backend` directory with the following variables:
 
    ```env
-   MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   ```
-
-2. **Frontend**:
-
-   Create a `.env` file in the `frontend/notes-app` directory with the following variable:
-
-   ```env
-   REACT_APP_API_URL=http://localhost:5000
+   MONGODB_CONNECTION_STRING=your_mongodb_connection_string
+   ACCESS_TOKEN_SECRET=your_jwt_secret
    ```
 
 ## Running the Application
@@ -101,7 +93,7 @@ Ensure you have the following installed:
    npm run dev
    ```
 
-The application should now be running, with the frontend accessible at `http://localhost:3000` and the backend at `http://localhost:5000`.
+The application should now be running, with the frontend accessible at `http://localhost:5173` and the backend at `http://localhost:8000`.
 
 ## License
 
