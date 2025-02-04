@@ -9,7 +9,7 @@ const notesRouter= require("./routers/notesRouter");
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5174', // Specific origin
+  origin: 'http://localhost:5173', // Specific origin
   credentials: true, // Required to send cookies
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -22,7 +22,7 @@ app.use(express.json());
 //app.use(express.urlencoded({extended:true}));
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/todo').then(() => {
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING).then(() => {
   console.log("Database connected");
 })
 .catch(err => {
