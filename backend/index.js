@@ -4,12 +4,14 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const authRouter = require("./routers/authRouter");
-const notesRouter= require("./routers/notesRouter");
+const notesRouter = require("./routers/notesRouter");
 
 const app = express();
 
+const PORT = process.env.PORT || 8000
+
 const corsOptions = {
-  origin: 'http://localhost:5173', // Specific origin
+  origin: process.env.FR_URL, // Specific origin
   credentials: true, // Required to send cookies
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -25,15 +27,15 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING).then(() => {
   console.log("Database connected");
 })
-.catch(err => {
-  console.log(err);
-});
+  .catch(err => {
+    console.log(err);
+  });
 
 app.get("/", (req, res) => {
-  res.json({data:"Hello"});
+  res.json({ data: "Hello" });
 });
 
-app.use("/user",authRouter);
-app.use("/note",notesRouter);
+app.use("/user", authRouter);
+app.use("/note", notesRouter);
 
-app.listen(8000,()=> {console.log("The Server has started at PORT 8000")});
+app.listen(PORT, () => { console.log(`The Server has started at PORT ${PORT}`) });
